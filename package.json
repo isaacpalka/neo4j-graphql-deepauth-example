@@ -1,0 +1,23 @@
+{
+  "name": "neo4j-graphql-deepauth-example",
+  "version": "0.0.1",
+  "description": "Example API using neo4j-graphql-deepauth to manage object-level permission in neo4j-graphql",
+  "license": "MIT",
+  "scripts": {
+    "start": "serverless offline start --port 4001 --noPrependStageInUrl",
+    "deploy": "serverless deploy",
+    "test": "serverless-bundle test"
+  },
+  "dependencies": {
+    "apollo-server-lambda": "2.16.1",
+    "graphql": "14.7.0",
+    "graphql-tag": "2.10.3",
+    "neo4j-driver": "4.1.0",
+    "neo4j-graphql-js": "2.15.1"
+  },
+  "devDependencies": {
+    "serverless-bundle": "3.0.0",
+    "serverless-dotenv-plugin": "3.0.0",
+    "serverless-offline": "^5.3.3"
+  }
+}
