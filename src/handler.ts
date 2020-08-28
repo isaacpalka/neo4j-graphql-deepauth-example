@@ -4,7 +4,7 @@ import neo4j from 'neo4j-driver';
 import { makeAugmentedSchema } from 'neo4j-graphql-js';
 
 import gqlschema = require('./schema.graphql');
-import { resolvers } from './resolvers.js';
+import { resolvers } from './resolvers';
 
 const typeDefs = gql`
   ${gqlschema}
@@ -15,10 +15,12 @@ const typeDefs = gql`
  * using credentials specified as environment variables
  * with fallback to defaults
  */
-const driver = neo4j.driver(
-  process.env.NEO4J_URI,
-  neo4j.auth.basic(process.env.NEO4J_USER, process.env.NEO4J_PASSWORD)
-);
+
+const neo4jUri = process.env.NEO4J_URI || '';
+const neo4jUser = process.env.NEO4J_USER || '';
+const neo4jPassword = process.env.NEO4J_PASSWORD || '';
+
+const driver = neo4j.driver(neo4jUri, neo4j.auth.basic(neo4jUser, neo4jPassword));
 
 const schema = makeAugmentedSchema({
   typeDefs,
