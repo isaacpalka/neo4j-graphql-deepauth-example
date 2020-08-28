@@ -1,6 +1,6 @@
 {
   "name": "neo4j-graphql-deepauth-example",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Example API using neo4j-graphql-deepauth to manage object-level permission in neo4j-graphql",
   "license": "MIT",
   "scripts": {
