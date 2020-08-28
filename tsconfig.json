@@ -4,7 +4,8 @@
     "module": "commonjs",
     "declaration": true,
     "outDir": "./lib",
-    "strict": true,
+    "strict": false,
+    "noImplicitAny": false,
     "baseUrl": "src",
     "lib": ["esnext.asynciterable", "ES2015", "DOM"],
     "plugins": [

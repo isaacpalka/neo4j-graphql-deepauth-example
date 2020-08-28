@@ -1,5 +1,5 @@
 import { neo4jgraphql } from 'neo4j-graphql-js';
-import { applyDeepAuth } from 'neo4j-graphql-deepauth';
+import { applyDeepAuth } from 'neo4j-deepauth';
 
 export const resolvers = {
   Query: {
