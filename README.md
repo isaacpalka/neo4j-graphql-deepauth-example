@@ -6,6 +6,10 @@ Example API using neo4j-graphql-deepauth to manage object-level permission in ne
 
 `yarn`
 
+### Run (on dev)
+
+`yarn run start:dev`
+
 ### Edit .env or env.development for Neo4j creds
 
 Set all variables to settings for your Neo4j instance
