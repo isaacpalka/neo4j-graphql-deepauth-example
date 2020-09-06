@@ -6,13 +6,16 @@ export const resolvers = {
     Dog(object, params, ctx, resolveInfo) {
       // No deepauth
       return neo4jgraphql(object, params, ctx, resolveInfo);
-      // const authResolveInfo = applyDeepAuth(params, ctx, resolveInfo);
-      // return neo4jgraphql(object, params, ctx, authResolveInfo);
     },
     Cat(object, params, ctx, resolveInfo) {
       // Uses deepauth
-      const authResolveInfo = applyDeepAuth(params, ctx, resolveInfo);
-      return neo4jgraphql(object, params, ctx, authResolveInfo);
+      try {
+        const { authParams, authResolveInfo } = applyDeepAuth(params, ctx, resolveInfo);
+        return neo4jgraphql(object, authParams, ctx, authResolveInfo);
+      } catch (e) {
+        console.warn(e);
+        return neo4jgraphql(object, params, ctx, resolveInfo);
+      }
     },
   },
 };

@@ -40,7 +40,7 @@ const server = new ApolloServer({
       schema: schema,
       context,
       deepAuthParams: {
-        $user_id: '123', // Dummy user ID
+        $user_id: 'Isaac', // Dummy user ID
       },
     };
   },
